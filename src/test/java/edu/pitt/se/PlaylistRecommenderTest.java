@@ -42,10 +42,12 @@ public class PlaylistRecommenderTest {
         assertEquals(100, PlaylistRecommender.normalizeVolume(110));
     }
 
+    @Test
     public void normalizeVolumeHLow() {
         assertEquals(0, PlaylistRecommender.normalizeVolume(-3));
     }
 
+    @Test
     public void normalizeVolumeNormal() {
         assertEquals(54, PlaylistRecommender.normalizeVolume(54));
     }
