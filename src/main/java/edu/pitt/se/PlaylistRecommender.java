@@ -16,13 +16,15 @@ public class PlaylistRecommender {
         for (int bpm : bpms)
             avg += bpm;
 
+        avg = avg / bpms.size();
+        
         // determining the classification
-        if (avg < 100)
+        if (avg >= 140)
             return "HIGH";
-        else if (avg >= 100 && avg < 140)
-            return "LOW";
+        else if (avg >= 100)
+            return "MEDIUM";
         else
-            return "HIGH";
+            return "LOW";
 
     }
 
@@ -45,6 +47,6 @@ public class PlaylistRecommender {
             return 0;
         else
             return volumeDb;
-
+        
     }
 }
